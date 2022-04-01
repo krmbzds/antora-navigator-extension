@@ -1,0 +1,29 @@
+antora:
+  extensions:
+  - ./..
+site:
+  title: Antora Navigator Demo
+  start_page: component-b::index.adoc
+content:
+  sources:
+  - url: https://gitlab.com/antora/demo/demo-component-a.git
+    branches: HEAD
+  - url: https://gitlab.com/antora/demo/demo-component-b.git
+    branches: [v1.0, v2.0, main]
+    start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctorj
+    branches: main, v2.4.x
+    start_path: docs
+asciidoc:
+  attributes:
+    experimental: ''
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: ''
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+output:
+  dir: ./public

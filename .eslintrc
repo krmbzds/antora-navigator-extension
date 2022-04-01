@@ -1,0 +1,21 @@
+{
+  "extends": "standard",
+  "rules": {
+    "array-callback-return": "off",
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline"
+    }],
+    "max-len": ["error", {
+      "code": 120,
+      "ignoreUrls": true
+    }],
+    "no-cond-assign": "off",
+    "prefer-regex-literals": "off",
+    "spaced-comment": "off",
+    "radix": ["error", "always"]
+  }
+}

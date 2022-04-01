@@ -1,0 +1,8 @@
+= Antora Navigator Demo
+
+This example provides a demonstration for how to use this extension with a site that uses the default UI (or a derivative of it).
+You can run it using the following command:
+
+ $ npx antora antora-playbook.yml
+
+Since this extension is still experimental, you'll notice that some assembly is still required.

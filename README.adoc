@@ -1,0 +1,15 @@
+= Antora Navigator Extension
+:url-repo: https://gitlab.com/opendevise/oss/antora-navigator-extension
+
+An Antora extension that exports the navigation data to JavaScript so the navigation tree can be built in the browser.
+
+WARNING: This is alpha software!
+That means the extension is experimental and likely to change at any time without notice.
+You're free to test it and give feedback, but take caution when relying on it in a production site.
+
+== Copyright and License
+
+Copyright (C) 2022-present by OpenDevise Inc. and the individual contributors of this project.
+
+Use of this software is granted under the terms of the https://www.mozilla.org/en-US/MPL/2.0/[Mozilla Public License Version 2.0] (MPL-2.0).
+See link:LICENSE[] to find the full license text.
