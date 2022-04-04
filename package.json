@@ -28,6 +28,7 @@
     "ui"
   ],
   "dependencies": {
+    "@antora/expand-path-helper": "~2.0",
     "uglify-js": "~3.14"
   },
   "devDependencies": {

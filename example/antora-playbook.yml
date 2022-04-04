@@ -1,6 +1,7 @@
 antora:
   extensions:
-  - ./..
+  - require: ./..
+    config_file: ./antora-navigator.yml
 site:
   title: Antora Navigator Demo
   start_page: component-b::index.adoc
