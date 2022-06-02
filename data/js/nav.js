@@ -94,7 +94,7 @@
     var componentPool = Object.assign({}, components)
     data.subcomponents.forEach(function (subcomponent) {
       var targetComponent = components[subcomponent.parent]
-      if (!targetComponent.unversioned) return
+      if (!(targetComponent || {}).unversioned) return
       var targetItems = targetComponent.nav.items
       Object.values(selectComponents(subcomponent.components, componentPool)).forEach(function (component) {
         var iconId = 'icon-nav-component-' + component.name
