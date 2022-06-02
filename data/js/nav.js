@@ -26,22 +26,16 @@
   }
 
   function extractNavData (source) {
-    var homeUrl = source.siteHomeUrl
-    if (homeUrl) {
-      delete source.siteHomeUrl
-    } else {
-      homeUrl = (homeUrl = document.querySelector('a.home-link')) ? homeUrl.getAttribute('href') : '/'
-    }
-    var navData = {
-      homeUrl: homeUrl,
-      components: source.siteNavigationData,
-      subcomponents: source.siteNavigationSubcomponents || [],
-      groups: source.siteNavigationGroups || [{ root: true, components: ['home', '*'] }],
-    }
+    var components = source.siteNavigationData
+    var homeUrl = components.homeUrl
+    if (!homeUrl) homeUrl = (homeUrl = document.querySelector('a.home-link')) ? homeUrl.getAttribute('href') : '/'
+    delete components.homeUrl
+    var subcomponents = components.subcomponents || []
+    delete components.subcomponents
+    var groups = components.groups || [{ root: true, components: ['home', '*'] }]
+    delete components.groups
     delete source.siteNavigationData
-    delete source.siteNavigationSubcomponents
-    delete source.siteNavigationGroups
-    return navData
+    return { homeUrl: homeUrl, components: components, subcomponents: subcomponents, groups: groups }
   }
 
   function getPage () {
@@ -114,7 +108,9 @@
         groupsAccum.pop()
       } else if (groupComponents.length === 1 && (component = groupComponents[0]).unversioned) {
         component.nav.items.forEach(function (it) {
-          var iconId = 'icon-nav-page-' + component.name + '-' + it.content.toLowerCase().replace(/ /g, '-')
+          var iconId = it.url
+            ? 'icon-nav-page' + it.url.replace(/(?:\.html|\/)$/, '').replace(/\//g, '-')
+            : 'icon-nav-page-' + component.name + '-' + it.content.toLowerCase().replace(/ +/g, '-')
           if (document.getElementById(iconId)) it.iconId = iconId
         })
       }

@@ -1,0 +1,11 @@
+#subcomponents:
+#- parent: component-xyx
+#  components: [component-a, component-b]
+groups:
+- root: true
+  components: home
+- title: Demo
+  components: 'component-*'
+- title: Asciidoctor
+  components: '*'
+output_file: site-navigation-data.js
