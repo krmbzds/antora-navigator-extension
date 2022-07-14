@@ -148,6 +148,8 @@
         var component = accum[pattern] // reinsert previously selected entry
         delete accum[pattern]
         accum[pattern] = component
+      } else if (pattern.charAt() === '/' && pattern.substr(1) in accum) {
+        delete accum[pattern.substr(1)]
       }
       return accum
     }, {})
