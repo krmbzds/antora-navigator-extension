@@ -86,9 +86,13 @@
       return componentsAccum
     }, {})
     var componentPool = Object.assign({}, components)
+    var parent
     data.subcomponents.forEach(function (subcomponent) {
-      var targetComponent = components[subcomponent.parent]
-      if (!(targetComponent || {}).unversioned) return
+      var targetComponent = components[(parent = subcomponent.parent)]
+      if (!(targetComponent || {}).unversioned) {
+        console.warn("parent component '" + parent + "' " + (targetComponent ? 'cannot be versioned' : 'not found'))
+        return
+      }
       var targetItems = targetComponent.nav.items
       Object.values(selectComponents(subcomponent.components, componentPool)).forEach(function (component) {
         var iconId = 'icon-nav-component-' + component.name
