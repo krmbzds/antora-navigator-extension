@@ -15,6 +15,9 @@ content:
   - url: https://github.com/asciidoctor/asciidoctorj
     branches: main, v2.4.x
     start_path: docs
+  - url: https://github.com/asciidoctor/asciidoctor-pdf
+    branches: v2.3.x
+    start_path: docs
 asciidoc:
   attributes:
     experimental: ''
