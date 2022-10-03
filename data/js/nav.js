@@ -445,8 +445,10 @@
     if (!scope) return
     var target = (scope.querySelector('[aria-current=page]') || { parentNode: scope.previousElementSibling }).parentNode
     var containerRect = container.getBoundingClientRect()
-    var midpoint = (containerRect.height - containerRect.top) * 0.5
-    var adjustment = target.offsetTop + target.offsetHeight * 0.5 - midpoint
+    var midpoint = containerRect.height * 0.5
+    var offset = target.offsetTop + target.offsetHeight * 0.5
+    while (container.contains((target = target.offsetParent))) offset += target.offsetTop
+    var adjustment = offset - midpoint
     if (adjustment > 0) container.scrollTop = adjustment
   }
 
