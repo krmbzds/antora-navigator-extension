@@ -7,5 +7,5 @@ groups:
 - title: Demo
   components: 'component-*'
 - title: Asciidoctor
-  components: '*'
+  components: ['*', '!asciidoctorj']
 output_file: site-navigation-data.js

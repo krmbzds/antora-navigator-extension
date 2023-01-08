@@ -1,16 +1,20 @@
 = Antora Navigator Demo
 
 This example provides a demonstration for how to use this extension with a site that uses the default UI (or a derivative of it).
-If you've already cloned this repository, you can run it using the following command:
 
- $ npx antora antora-playbook.yml
-
-If you haven't yet cloned the repository, use these steps instead:
+If you haven't yet cloned the repository, follow these steps first:
 
  $ git clone https://gitlab.com/opendevise/oss/antora-navigator-extension.git
    cd antora-navigator-extension
    npm ci
    cd example
-   npx antora antora-playbook.yml
+
+Once you have completed those steps, you can run the example using the following command:
+
+ $ npx antora antora-playbook.yml
+
+You will see xref warnings.
+These are the result of only building a selection of content from the Antora demo and Asciidoctor docs.
+You can safely ignore these warnings.
 
 Since this extension is still experimental, you'll notice that some assembly is still required.

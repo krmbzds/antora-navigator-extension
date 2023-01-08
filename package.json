@@ -19,6 +19,7 @@
     "test": "_mocha"
   },
   "files": [
+    "data",
     "lib"
   ],
   "keywords": [
